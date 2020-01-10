@@ -1,0 +1,22 @@
+.container-aulas{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+.card-categoria{
+    margin: 18px;
+}
+
+.card-aula{
+    background-color: #d3cece;
+    border-radius: 8px;
+    margin: 8px;
+    padding: 10px;
+    width: 210px;
+}
+
+.categoria-aula{
+    font-size: 20px;
+}
