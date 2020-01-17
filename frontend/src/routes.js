@@ -5,6 +5,7 @@ import LoginAluno from "./pages/LoginAluno/LoginAluno";
 import LoginAdmin from "./pages/LoginAdmin/LoginAdmin";
 import DashboardAluno from "./pages/DashboardAluno/DashboardAluno";
 import DashboardAdmin from "./pages/DashboardAdmin/DashboardAdmin";
+import DadosAluno from './pages/DashboardAdmin/DadosAluno/DadosAluno'
 import CadastroAluno from "./pages/CadastroAluno/CadastroAluno"
 import CadastroAula from "./pages/CadastroAula/CadastroAula";
 
@@ -15,7 +16,8 @@ export default function Routes(){
                 <Route path="/" exact component={LoginAluno} />
                 <Route path="/admin" component={LoginAdmin} />
                 <Route path='/dashboard/aluno' component={DashboardAluno}/>
-                <Route path="/dashboard/admin" component={DashboardAdmin} />
+                <Route path="/dashboard/admin" exact component={DashboardAdmin} />
+                <Route path="/dashboard/admin/dados" exact component={DadosAluno} />
                 <Route path="/cadastro/aluno" component={CadastroAluno} />
                 <Route path="/cadastro/aula" component={CadastroAula} />
                 <Route render={() => <h1>Page not found</h1>} />} />

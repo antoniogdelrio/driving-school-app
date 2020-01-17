@@ -15,18 +15,18 @@ function DashboardAluno(){
     let fazMoto = localStorage.getItem('moto');
     let fazCarro = localStorage.getItem('carro');
     const nome = localStorage.getItem('userName');
-    
+    const cpf = localStorage.getItem('cpf');
     fazMoto = stringToBoolean(fazMoto);
     fazCarro = stringToBoolean(fazCarro);
     
-    let cardMoto = () => {
+    let cardMoto = (fazMoto) => {
         if(fazMoto){
-            return (<CardAula categoria="M"/>)
+            return (<CardAula categoria="M" cpf={cpf}/>)
         }
     }
-    let cardCarro = () => {
+    let cardCarro = (fazCarro) => {
         if(fazCarro){
-            return (<CardAula categoria="C"/>)
+            return (<CardAula categoria="C" cpf={cpf} />)
         }
     }
     return(
@@ -35,8 +35,8 @@ function DashboardAluno(){
                 <p className="welcome-message">Bem vindo(a), <strong>{nome}</strong>!</p>
                 <p>Verifique abaixo os dias e horários das suas aulas: </p>
             </div>
-            {cardMoto()}
-            {cardCarro()}
+            {cardMoto(fazMoto)}
+            {cardCarro(fazCarro)}
         </div>
     )
 }

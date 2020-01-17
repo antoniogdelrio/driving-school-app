@@ -43,5 +43,6 @@ body, input, button{
   align-items: center;
   min-width: auto;
   max-width: 500px;
+  min-height: 80px;
   background: #faf5e4;
 }

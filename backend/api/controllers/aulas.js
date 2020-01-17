@@ -35,7 +35,8 @@ exports.post_aula = (req, res, next) => {
     const aula = new Aula({
         categoria: req.body.categoria,
         dia: new Date(dataArray[2], dataArray[1], dataArray[0]),
-        horario: req.body.horario,
+        horarioDeInicio: req.body.horarioDeInicio,
+        horarioDeTermino: req.body.horarioDeTermino,
         cpf: req.body.cpf,
         _id: mongoose.Types.ObjectId()
     })

@@ -1,0 +1,17 @@
+.form-admin{
+    padding-top: 20px;
+}
+
+.form-admin > form > button{
+    background-color: #004445;
+    font-size: 15px;
+    color: #faf5e4;
+    border-color: #004445;
+    border-radius: 5px;
+    padding: 2px;
+    margin-left: 5px;
+}
+
+.form-admin > form > button:hover{
+    background-color: #045c54;
+}

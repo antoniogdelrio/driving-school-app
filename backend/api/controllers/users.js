@@ -84,4 +84,40 @@ exports.login = (req, res, next) => {
                 message: 'Auth successful'
             })
         })
+        .catch(err => {
+            res.status(404).json({error: err});
+        })
+}
+
+exports.login_admin = (req, res, next) => {
+    const cpf = req.body.cpf;
+    User.findOne({cpf: cpf})
+        .exec()
+        .then(user => {
+            const isAdmin = user.admin;
+            if(user === null){
+                return res.status(404).json({msg: "CPF ou senha incorretos"});
+            }
+            if(!bcrypt.compareSync(req.body.senha, user.senha)){
+                return res.status(404).json({msg: "CPF ou senha incorretos"});
+            }
+            if(!isAdmin){
+                return res.status(404).json({msg: "Acesso negado"});
+            }
+            const token = jwt.sign({
+                cpf: user.cpf,
+                senha: user.senha
+            },
+            'password',
+            {
+                expiresIn: '1h'
+            })
+            return res.status(200).json({
+                token: token,
+                message: 'Auth successful'
+            })
+        })
+        .catch(err => {
+            res.status(404).json({error: err});
+        })
 }
