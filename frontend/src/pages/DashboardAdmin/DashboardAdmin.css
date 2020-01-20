@@ -1,8 +1,11 @@
 .form-admin{
     padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.form-admin > form > button{
+.form-admin > form button{
     background-color: #004445;
     font-size: 15px;
     color: #faf5e4;

@@ -35,6 +35,11 @@ function DashboardAdmin(props){
         }
     }
 
+    function handleOnClick(event){
+        event.preventDefault();
+        history.push('/cadastro/aluno');
+    }
+
     return(
         <>
             <div className="form-admin">
@@ -47,6 +52,7 @@ function DashboardAdmin(props){
                     ></input>
                     <button type="submit">Buscar</button>
                 </form>
+                <button onClick={handleOnClick}>Cadastrar novo aluno</button>
             </div>
         </>
     )

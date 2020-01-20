@@ -1,0 +1,24 @@
+.form-aluno{
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+}
+
+.form-aluno label{
+    margin-top: 8px;;
+}
+
+.form-aluno button{
+    margin-top: 16px;
+}
+
+.radio-buttons-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.radio-buttons-box > input{
+    margin-left: 10px;
+    margin-right: 2px;
+}
