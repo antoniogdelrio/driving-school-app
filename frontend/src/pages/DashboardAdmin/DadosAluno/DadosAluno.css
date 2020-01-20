@@ -1,0 +1,47 @@
+.dados-aluno{
+    display: flex;
+    flex-direction: column;
+}
+
+.dados-aluno > p{
+    margin-top: 8px;
+}
+
+.header{
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-moto{
+    align-self: center;
+    margin-bottom: 8px;
+    max-width: 300px;
+    background-color: #004445;
+    font-size: 15px;
+    color: #faf5e4;
+    border-color: #004445;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.add-moto:hover{
+    background-color: #045c54;
+}
+
+.add-carro{
+    align-self: center;
+    margin-bottom: 8px;
+    max-width: 300px;
+    background-color: #004445;
+    font-size: 15px;
+    color: #faf5e4;
+    border-color: #004445;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.add-carro:hover{
+    background-color: #045c54;
+}

@@ -1,8 +1,11 @@
 import React, {useState, useEffect} from 'react';
+import {useHistory} from 'react-router-dom';
 import './DashboardAdmin.css';
 import api from '../../services/api';
 
 function DashboardAdmin(props){
+
+    const history = useHistory();
 
     const [cpf, setCpf] = useState('');
 
@@ -11,7 +14,6 @@ function DashboardAdmin(props){
         localStorage.removeItem('diaDeMatricula');
         localStorage.removeItem('moto');
         localStorage.removeItem('carro');
-        localStorage.removeItem('cpf');
     },[])
 
     async function handleSubmit(event){
@@ -29,7 +31,7 @@ function DashboardAdmin(props){
             localStorage.setItem('diaDeMatricula', response.data.diaDeMatricula);
             localStorage.setItem('moto', response.data.moto);
             localStorage.setItem('carro', response.data.carro);
-            props.history.push('/dashboard/admin/dados');
+            history.push('/dashboard/admin/dados');
         }
     }
 

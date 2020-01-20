@@ -1,0 +1,29 @@
+.form-aula{
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+}
+
+.form-aula label{
+    margin-top: 15px;
+}
+
+.form-aula input{
+    margin-bottom: 8px;
+}
+
+button{
+    margin-top: 8px;
+    margin-bottom: 8px;
+    max-width: 300px;
+    background-color: #004445;
+    font-size: 15px;
+    color: #faf5e4;
+    border-color: #004445;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+button:hover{
+    background-color: #045c54;
+}

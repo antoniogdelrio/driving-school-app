@@ -1,29 +1,35 @@
 import React, {useEffect, useState} from 'react';
 import './CardAula.css';
 import api from '../../../services/api'
-import axios from 'axios';
 
 function CardAula(props){
-
-    
     const [aulas, setAulas] = useState({});
     const [elementos, setElementos] = useState([]);
 
     const categoria = props.categoria;
     const cpf = props.cpf;
-    
-    useEffect(async function(){
-                
-                const response = await api.get('/aulas/' + cpf + '/' + categoria, {
-                    headers: {
-                        Authorization: 'Bearer ' + localStorage.getItem('token')
-                    },
-                });
-                console.log('responsee', response.data);
 
+    useEffect(()=>{
+
+        let mounted = true
+
+        const loadData = async ()=>{
+            const response = await api.get('/aulas/' + cpf + '/' + categoria, {
+                headers: {
+                    Authorization: 'Bearer ' + localStorage.getItem('token')
+                },
+            });
+            console.log('responsee', response.data);
+            if (mounted) {
                 setAulas(response.data)
+            }
+        };
+        loadData();
 
-    }, []);
+        return () => {
+            mounted = false;
+          };
+    }, []) 
 
     useEffect(()=>{
         const printInfo = function(element){
@@ -60,7 +66,7 @@ function CardAula(props){
         <div className="card-categoria">
             <p className="categoria-aula"><strong>{defineLabel(categoria)}</strong></p>
             <div className="container-aulas">
-                {elementos}
+            {elementos}
             </div>
         </div>
     )

@@ -1,16 +1,33 @@
 import React, {useState, useEffect} from 'react';
+import {useHistory} from 'react-router-dom';
 import './DadosAluno.css';
 import CardAula from '../../DashboardAluno/CardAula/CardAula';
-import api from '../../../services/api';
 
 function DadosAluno(props){
+
+    const history = useHistory();
+
+    const [visible, setVisible] = useState(true);
+
+    async function handleClick(categoria){
+
+        setVisible(false);
+
+        if(categoria === 'M'){
+            await localStorage.setItem('marcarPara', 'M');
+        }
+        if(categoria === 'C'){
+            await localStorage.setItem('marcarPara', 'C');
+        }
+
+        history.push('/cadastro/aula');
+    }
 
     useEffect(()=>{
         localStorage.removeItem('nomeAluno');
         localStorage.removeItem('diaDeMatricula');
         localStorage.removeItem('moto');
         localStorage.removeItem('carro');
-        localStorage.removeItem('cpf');
     },[])
 
     let fazMoto;
@@ -38,7 +55,9 @@ function DadosAluno(props){
             return (
             <>
                 <CardAula categoria="M" cpf={localStorage.getItem('cpf')}/>
-                <button>+</button>
+                <button className="add-moto" onClick={(event) => {
+                    event.preventDefault(); handleClick('M');
+                }}>Adicionar aula de moto</button>
             </>
             )
         }
@@ -48,19 +67,24 @@ function DadosAluno(props){
             return (
                 <>
                 <CardAula categoria="C" cpf={localStorage.getItem('cpf')}/>
-                <button>+</button>
+                <button className="add-carro" onClick={(event) => {
+                    event.preventDefault(); handleClick('C');
+                }}>Adicionar aula de carro</button>
             </>
             )
         }
     }
 
     return(
-        <>
-            <p>Nome do(a) aluno(a): {nomeAluno}</p>
-            <p>Dia de Matrícula: {diaDeMatricula}</p>
+        <div className="dados-aluno">
+            <div className="header">
+                <p>Nome do(a) aluno(a): <strong>{nomeAluno}</strong></p>
+                <p>Dia de Matrícula: <strong>{diaDeMatricula}</strong></p>
+            </div>
             {cardMoto(fazMoto)}
             {cardCarro(fazCarro)}
-        </>
+            
+        </div>
     )
     
 }
