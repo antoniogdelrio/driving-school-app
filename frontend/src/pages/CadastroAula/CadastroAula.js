@@ -1,13 +1,22 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import {useHistory} from 'react-router-dom';
 import './CadastroAula.css';
 import api from '../../services/api';
 
 function CadastroAula(props){
+    const history = useHistory();
+
     const cpf = localStorage.getItem('cpf');
     const categoria = localStorage.getItem('marcarPara');
     const token = localStorage.getItem('token')
 
     const [mensagem, setMensagem] = useState('');
+
+    useEffect(()=>{
+        if((!localStorage.getItem('token')) && (!localStorage.getItem('isAdmin'))){
+            history.push('/admin');
+        }
+    },[])
 
     async function handleSubmit(event){
         event.preventDefault();
@@ -34,12 +43,18 @@ function CadastroAula(props){
         if(response.status === 200){
             setMensagem('Aula cadastrada com sucesso!')
         }
-        
+    }
+
+    function handleOnClickVoltar(event){
+        event.preventDefault();
+
+        history.push('/dashboard/admin/dados');
     }
 
     return(
         <>
             <form class="form-aula" onSubmit={handleSubmit}>
+                <button className="return-button" onClick={handleOnClickVoltar}>Voltar</button>
                 <h3>Cadastro de Aula</h3>
                 <label>CPF do(a) aluno(a)</label>
                 <input value={cpf} type="text" name="cpf"></input>

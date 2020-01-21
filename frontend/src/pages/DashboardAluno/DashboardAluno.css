@@ -1,4 +1,6 @@
 .dashboard-header{
+    display: flex;
+    flex-direction: column;
     padding:10px;
     padding-bottom: 0px;
 }
@@ -8,5 +10,8 @@
     margin: 5px;
 }
 
-
-
+.dashboard-header button{
+    min-width: 80px;
+    align-self: flex-end;
+    font-size: 15px;
+}

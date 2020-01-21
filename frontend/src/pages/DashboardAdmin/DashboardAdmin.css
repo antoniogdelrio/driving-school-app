@@ -3,18 +3,38 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 18px;
+}
+
+.form-admin > form > input{
+    border-radius: 2px;
+    min-height: 30px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    font-size: 18px;
+}
+
+.return-button{
+    align-self: flex-start;
+    min-width: 70px;
+    font-size: 18px;
 }
 
 .form-admin > form button{
     background-color: #004445;
-    font-size: 15px;
     color: #faf5e4;
     border-color: #004445;
     border-radius: 5px;
     padding: 2px;
     margin-left: 5px;
+    font-size: 18px;
 }
 
 .form-admin > form > button:hover{
     background-color: #045c54;
+}
+
+.button-submit-buscar {
+    min-width: 80px;
 }

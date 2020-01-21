@@ -10,10 +10,9 @@ function DashboardAdmin(props){
     const [cpf, setCpf] = useState('');
 
     useEffect(()=>{
-        localStorage.removeItem('nomeAluno');
-        localStorage.removeItem('diaDeMatricula');
-        localStorage.removeItem('moto');
-        localStorage.removeItem('carro');
+        if((!localStorage.getItem('token')) && (!localStorage.getItem('isAdmin'))){
+            history.push('/admin');
+        }
     },[])
 
     async function handleSubmit(event){
@@ -35,14 +34,30 @@ function DashboardAdmin(props){
         }
     }
 
-    function handleOnClick(event){
+    function handleOnClickCadastrar(event){
         event.preventDefault();
         history.push('/cadastro/aluno');
+    }
+
+    function handleOnClickSair(event){
+        event.preventDefault();
+        localStorage.removeItem('cpf');
+        localStorage.removeItem('diaDeMatricula');
+        localStorage.removeItem('nomeAluno');
+        localStorage.removeItem('userName');
+        localStorage.removeItem('carro');
+        localStorage.removeItem('moto');
+        localStorage.removeItem('marcarPara');
+        localStorage.removeItem('token');
+        localStorage.removeItem('isAdmin');
+
+        history.push('/admin');
     }
 
     return(
         <>
             <div className="form-admin">
+                <button className="return-button" onClick={handleOnClickSair}>Sair</button>
                 <form onSubmit={handleSubmit}>
                     <label>CPF do Aluno </label>
                     <input
@@ -50,9 +65,9 @@ function DashboardAdmin(props){
                         value={cpf} 
                         onChange={event => setCpf(event.target.value)}
                     ></input>
-                    <button type="submit">Buscar</button>
+                    <button className="button-submit-buscar" type="submit">Buscar</button>
                 </form>
-                <button onClick={handleOnClick}>Cadastrar novo aluno</button>
+                <button onClick={handleOnClickCadastrar}>Cadastrar novo aluno</button>
             </div>
         </>
     )

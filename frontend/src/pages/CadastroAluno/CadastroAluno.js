@@ -4,8 +4,15 @@ import './CadastroAluno.css';
 import api from '../../services/api';
 
 function CadastroAluno(props){
+    const history = useHistory();
 
     const token = localStorage.getItem('token')
+
+    useEffect(()=>{
+        if((!localStorage.getItem('token')) && (!localStorage.getItem('isAdmin'))){
+            history.push('/admin');
+        }
+    },[])
 
     async function handleSubmit(event){
         event.preventDefault();
@@ -46,8 +53,15 @@ function CadastroAluno(props){
 
     }
 
+    function handleOnClickVoltar(event){
+        event.preventDefault();
+
+        history.push('/dashboard/admin')
+    }
+
     return(
         <form class="form-aluno" onSubmit={handleSubmit}>
+            <button className="return-button" onClick={handleOnClickVoltar}>Voltar</button>
             <h3>Cadastro de Aluno</h3>
             <label>CPF do(a) aluno(a)</label>
             <input type="text" name="cpf"></input>
@@ -63,7 +77,7 @@ function CadastroAluno(props){
                 <input type="radio" name="categorias" value="C"></input>Carro 
                 <input type="radio" name="categorias" value="M+C"></input>Moto e Carro 
             </div>
-            <button type="submit">Enviar</button>
+            <button type="submit" className="submit-button">Enviar</button>
         </form>
     )
     

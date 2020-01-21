@@ -3,6 +3,10 @@
     flex-direction: column;
 }
 
+.dados-aluno .return-button{
+    margin-left: 15px;
+}
+
 .dados-aluno > p{
     margin-top: 8px;
 }
@@ -16,7 +20,7 @@
 
 .add-moto{
     align-self: center;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
     max-width: 300px;
     background-color: #004445;
     font-size: 15px;
@@ -32,7 +36,7 @@
 
 .add-carro{
     align-self: center;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
     max-width: 300px;
     background-color: #004445;
     font-size: 15px;

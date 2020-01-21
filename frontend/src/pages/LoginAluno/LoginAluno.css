@@ -1,5 +1,7 @@
 .login-box {
     margin: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .login-box > form{
@@ -28,8 +30,18 @@
     -moz-box-shadow: none;
     box-shadow: none;
 }
+
+.login-box > button {
+    background-color: #004445;
+    color: #faf5e4;
+    border-color: #004445;
+    border-radius: 5px;
+    align-self: flex-end;
+    font-size: 15px;
+}
   
 .login-box > form > button {
+    min-width: 300px;
     background-color: #004445;
     font-size: 20px;
     color: #faf5e4;
