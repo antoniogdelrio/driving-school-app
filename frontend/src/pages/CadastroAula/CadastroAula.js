@@ -66,7 +66,7 @@ function CadastroAula(props){
                 <input type="text" name="horainicio"></input>
                 <label>Horário de Término</label>
                 <input type="text" name="horatermino"></input>
-                <button type="submit">Enviar</button>
+                <button type="submit" className="submit-button">Enviar</button>
             </form>
             <h3>{mensagem}</h3>
         </>

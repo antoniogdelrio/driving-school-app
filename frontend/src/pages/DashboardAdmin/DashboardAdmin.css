@@ -9,6 +9,7 @@
 .form-admin > form > input{
     border-radius: 2px;
     min-height: 30px;
+    min-width: 80px;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;

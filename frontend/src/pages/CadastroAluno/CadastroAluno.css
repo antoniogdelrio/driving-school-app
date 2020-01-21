@@ -5,12 +5,17 @@
     font-size: 20px;
 }
 
+.return-button{
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
 .form-aluno label{
     margin-top: 8px;
     font-size: 20px;
 }
 
-.form-aluno input{
+/*.form-aluno input{
     font-size: 20px;
     margin-bottom: 20px;
     border-radius: 2px;
@@ -19,16 +24,16 @@
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
-}
+}*/
 
 .form-aluno button{
     margin-top: 16px;
 }
 
-.form-aluno .submit-button{
+/*.form-aluno .submit-button{
     align-self: center;
     min-width: 300px;
-}
+}*/
 
 .radio-buttons-box{
     display: flex;
