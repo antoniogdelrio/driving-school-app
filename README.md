@@ -30,7 +30,7 @@ A simplified driving school app using React on the frontend and Nodejs, Express 
 
 ![Dashboard Admin](app-views/4-dashboard-admin.jpg)
 
-![Dashboard Admin Dados](app-views/6-dashboard-admin-dados.jpg)
+![Dashboard Admin Dados](app-views/5-dashboard-admin-dados.jpg)
 
 ![Cadastro Aula](app-views/6-cadastro-aula.jpg)
 
