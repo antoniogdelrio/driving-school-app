@@ -52,6 +52,6 @@
     margin-left: 2px;
 }
 
-.login-box > form > button:hover{
+.login-box button:hover{
     background-color: #045c54;
 }
