@@ -58,6 +58,7 @@ function DashboardAdmin(props){
         <>
             <div className="form-admin">
                 <button className="return-button" onClick={handleOnClickSair}>Sair</button>
+                <h3>Buscar aluno</h3>
                 <form onSubmit={handleSubmit}>
                     <label>CPF do Aluno </label>
                     <input
