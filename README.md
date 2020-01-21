@@ -9,7 +9,7 @@ A simplified driving school app using React on the frontend and Nodejs, Express 
 {
     nome: String,
     diaDeMatricula: Date,
-    admin: __true__,
+    admin: true,
     cpf: String,
     senha: String,
     moto: Boolean,
