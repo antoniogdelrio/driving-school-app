@@ -17,8 +17,8 @@ A simplified driving school app using React on the frontend and Nodejs, Express 
     _id: Schema.Types.ObjectId
 }
 ```
-* Create a “.env” file in /backend directory, following the structure of “.env.default”
-* In a terminal, use “npm start” (for both /backend and /frontend directories
+* Create a “.env” file in /backend directory, following the structure of “.env.default” file
+* In a terminal, use “npm start” (for both /backend and /frontend directories)
 
 ## App views ##
 
