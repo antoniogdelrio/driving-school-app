@@ -7,11 +7,7 @@ function DadosAluno(props){
 
     const history = useHistory();
 
-    const [visible, setVisible] = useState(true);
-
     async function handleClick(categoria){
-
-        setVisible(false);
 
         if(categoria === 'M'){
             await localStorage.setItem('marcarPara', 'M');

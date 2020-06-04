@@ -1,10 +1,10 @@
-# driving-school-app
+# driving-school-app #
 
-A simplified driving school app using React on the frontend and Nodejs, Express and MongoDB on the backend.
+A simplified driving school app using React on the frontend and Nodejs, Express and MongoDB Atlas on the backend.
 
 
 ## Usage ##
-* Create an Admin User directly in MongoDB database (this feature will be implement in next version of the application 😊). The schema of the User Model is:
+* Post new users directly on route '/users' of localhost:3333. The User schema has the follow structure:
 ```javascript
 {
     nome: String,
@@ -14,13 +14,15 @@ A simplified driving school app using React on the frontend and Nodejs, Express 
     senha: String,
     moto: Boolean,
     carro: Boolean,
-    _id: Schema.Types.ObjectId
 }
 ```
 * Create a “.env” file in /backend directory, following the structure of “.env.default” file
 * In a terminal, use “npm start” (for both /backend and /frontend directories)
 
-## App views ##
+## App preview ##
+![](app-views/gif.gif)
+
+## Routes Screenshots ##
 
 Route '/'
 ![Login Aluno](app-views/1-login-aluno.jpg)
