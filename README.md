@@ -1,4 +1,4 @@
-# driving-school-app #
+# Driving School App :blue_car: #
 
 A simplified driving school app using React on the frontend and Nodejs, Express and MongoDB Atlas on the backend.
 
